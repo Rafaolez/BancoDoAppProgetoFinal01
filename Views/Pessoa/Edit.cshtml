@@ -1,0 +1,84 @@
+﻿@model BancoProjetoFinal1.Models.Pessoa
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Pessoa</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PessoaId" />
+            <div class="form-group">
+                <label asp-for="PessoaNome" class="control-label"></label>
+                <input asp-for="PessoaNome" class="form-control" />
+                <span asp-validation-for="PessoaNome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PessoaRoupa" class="control-label"></label>
+                <input asp-for="PessoaRoupa" class="form-control" />
+                <span asp-validation-for="PessoaRoupa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PessoaCor" class="control-label"></label>
+                <input asp-for="PessoaCor" class="form-control" />
+                <span asp-validation-for="PessoaCor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PessoaSexo" class="control-label"></label>
+                <input asp-for="PessoaSexo" class="form-control" />
+                <span asp-validation-for="PessoaSexo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PessoaObservacao" class="control-label"></label>
+                <input asp-for="PessoaObservacao" class="form-control" />
+                <span asp-validation-for="PessoaObservacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PessoaLocalDesaparecimento" class="control-label"></label>
+                <input asp-for="PessoaLocalDesaparecimento" class="form-control" />
+                <span asp-validation-for="PessoaLocalDesaparecimento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PessoaFoto" class="control-label"></label>
+                <input asp-for="PessoaFoto" class="form-control" />
+                <span asp-validation-for="PessoaFoto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PessoaDtDesaparecimento" class="control-label"></label>
+                <input asp-for="PessoaDtDesaparecimento" class="form-control" />
+                <span asp-validation-for="PessoaDtDesaparecimento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PessoaDtEncontro" class="control-label"></label>
+                <input asp-for="PessoaDtEncontro" class="form-control" />
+                <span asp-validation-for="PessoaDtEncontro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PessoaStatus" class="control-label"></label>
+                <input asp-for="PessoaStatus" class="form-control" />
+                <span asp-validation-for="PessoaStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsuarioId" class="control-label"></label>
+                <select asp-for="UsuarioId" class="form-control" asp-items="ViewBag.UsuarioId"></select>
+                <span asp-validation-for="UsuarioId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
